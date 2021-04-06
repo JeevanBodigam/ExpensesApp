@@ -2,10 +2,9 @@
 //  RectangleImage.swift
 //  ToDo App
 //
-//  Created by sai kiran reddy on 06/04/21.
+//  Created by Jeevan reddy on 06/04/21.
 //  Copyright © 2021 Bodigam,Jeevan. All rights reserved.
 //
-
 import Foundation
 import SwiftUI
 
@@ -27,4 +26,3 @@ struct RectangleImage_Previews: PreviewProvider {
     }
     
 }
-

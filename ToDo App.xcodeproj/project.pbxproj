@@ -15,6 +15,7 @@
 		3BF4B558261BC13200E4138A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF4B556261BC13200E4138A /* LaunchScreen.storyboard */; };
 		3BF4B560261BC4BA00E4138A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4B55F261BC4BA00E4138A /* DataStore.swift */; };
 		3BF4B566261BF15B00E4138A /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4B565261BF15B00E4138A /* WelcomePage.swift */; };
+		606F2A1D261C37A1006FE876 /* RectangleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F2A1C261C37A1006FE876 /* RectangleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3BF4B559261BC13200E4138A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF4B55F261BC4BA00E4138A /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		3BF4B565261BF15B00E4138A /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		606F2A1C261C37A1006FE876 /* RectangleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3BF4B54B261BC13100E4138A /* AppDelegate.swift */,
 				3BF4B54D261BC13100E4138A /* SceneDelegate.swift */,
 				3BF4B54F261BC13100E4138A /* ContentView.swift */,
+				606F2A1C261C37A1006FE876 /* RectangleImage.swift */,
 				3BF4B551261BC13200E4138A /* Assets.xcassets */,
 				3BF4B556261BC13200E4138A /* LaunchScreen.storyboard */,
 				3BF4B565261BF15B00E4138A /* WelcomePage.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF4B566261BF15B00E4138A /* WelcomePage.swift in Sources */,
+				606F2A1D261C37A1006FE876 /* RectangleImage.swift in Sources */,
 				3BF4B54C261BC13100E4138A /* AppDelegate.swift in Sources */,
 				3BF4B560261BC4BA00E4138A /* DataStore.swift in Sources */,
 				3BF4B54E261BC13100E4138A /* SceneDelegate.swift in Sources */,
