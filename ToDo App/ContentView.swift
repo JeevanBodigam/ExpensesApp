@@ -14,10 +14,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Spacer()
                 RectangleImage().padding()
                 Spacer()
             TextField("Enter Name",text:$userName)
-                    .padding(.horizontal,30)
+                
+                .font(.system(size: 30))
+                    .padding(30)
                 NavigationLink(destination: WelcomePage(userName:self.$userName)){
                     Text("Track Expenses")
                         .frame(width: .infinity, height: 50.0)

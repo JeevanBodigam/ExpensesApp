@@ -35,7 +35,7 @@ struct WelcomePage: View {
                 .font(.title)
                 .foregroundColor(Color.red)
                 .bold()
-            TextField("Description*",text: self.$expenseName)
+            TextField("Description*",text: self.$expenseName).keyboardType(.default)
             HStack{
                 TextField("$10(Required)",text: self.$expenseValue).keyboardType(.numberPad)
 //                NavigationLink(destination: ){
