@@ -16,9 +16,17 @@ struct WelcomePage: View {
     @State var expenseTotal:Double=0
     @State var disableButton:Bool=false
     @State var alertShow:Bool=false
+    @Binding var userName:String;
     
     var formattedValue:String{
         return String(format: "%.2f",arguments:[expenseTotal])
+    }
+    var guestuser:String{
+        if userName.isEmpty{
+            return "Guest"
+        }else{
+            return userName
+        }
     }
     
     var inputView:some View{
@@ -58,8 +66,6 @@ struct WelcomePage: View {
         }else{
             self.alertShow=true
         }
-        
-        
     }
     var body: some View {
         VStack{
@@ -77,7 +83,7 @@ struct WelcomePage: View {
                         }
                         
                     }
-                }.navigationBarTitle("Expenses Tracker ")
+                }.navigationBarTitle("\(guestuser)'s Expenses ")
                 .padding()
                     .alert(isPresented: $alertShow){
                         Alert(title: Text("OOPS"), message:Text("Mandatory fields missing!!!") , dismissButton: .default(Text("Got it")))
@@ -89,8 +95,8 @@ struct WelcomePage: View {
     }
 }
 
-struct WelcomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomePage()
-    }
-}
+//struct WelcomePage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WelcomePage( userName: "Jeevan")
+//    }
+//}
