@@ -16,6 +16,7 @@ struct WelcomePage: View {
     @State var expenseTotal:Double=0
     @State var disableButton:Bool=false
     @State var alertShow:Bool=false
+    @State var alertNumber:Bool=false
     @Binding var userName:String;
     
     var formattedValue:String{
@@ -30,40 +31,48 @@ struct WelcomePage: View {
     }
     
     var inputView:some View{
-        VStack(spacing:10){
-            Text("$ \(formattedValue)")
-                .font(.title)
-                .foregroundColor(Color.red)
-                .bold()
-            TextField("Description*",text: self.$expenseName).keyboardType(.default)
-            HStack{
-                TextField("$10(Required)",text: self.$expenseValue).keyboardType(.numberPad)
-//                NavigationLink(destination: ){
-                    Button(action:(self.addNewToDo)){
-                        Text("Add Expense")
-                    }
-                .disabled(self.disableButton)
-                .frame(width: 100.0, height: 50.0)
-                .background(Color.orange)
-                .foregroundColor(Color.black)
-                .cornerRadius(20)
-                .font(.system(size:15))
-
+        NavigationView{/Users/saikiranreddy/Desktop/ExpensesApp/ToDo App/SceneDelegate.swift
+            VStack(spacing:10){
+                Text("$ \(formattedValue)")
+                    .font(.title)
+                    .foregroundColor(Color.red)
+                    .bold()
+                TextField("Description*",text: self.$expenseName).keyboardType(.default)
+                HStack{
+                    TextField("$10(Required)",text: self.$expenseValue).keyboardType(.numberPad)
+                        
+    //                NavigationLink(destination: ){
+                        Button(action:(self.addNewToDo)){
+                            Text("Add Expense")
+                        }
+                    .disabled(self.disableButton)
+                    .frame(width: 100.0, height: 50.0)
+                    .background(Color.orange)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(20)
+                    .font(.system(size:15))
+                }
             }
-            
         }
     }
     
     
     func addNewToDo(){
-        if !self.expenseName.isEmpty && !self.expenseValue.isEmpty{
+        if !self.expenseName.isEmpty && !self.expenseValue.isEmpty  {
             disableButton=false
             taskStore.tasks.append(Task(expense: self.expenseValue, toDoItem: self.expenseName))
             expenseTotal+=Double((Double)(self.expenseValue) ?? 0)
             self.expenseValue=""
             self.expenseName=""
 //            self.disableButton=true
-        }else{
+        }else if let n=Int(self.expenseValue){
+            if n != nil{
+                self.alertNumber=true
+            }else{
+                self.alertNumber=false
+            }
+        }
+        else{
             self.alertShow=true
         }
     }
@@ -87,6 +96,9 @@ struct WelcomePage: View {
                 .padding()
                     .alert(isPresented: $alertShow){
                         Alert(title: Text("OOPS"), message:Text("Mandatory fields missing!!!") , dismissButton: .default(Text("Got it")))
+                            
+                            
+
                 }
                 
             }
